@@ -16,6 +16,7 @@
 			picture.cssbox { display: none; position: absolute; left: 0; top: 0; margin: 5vh 0 0 50%; transform: translate(-50%, 0); background-color: #fff; background-repeat: no-repeat; background-size: cover; background-position: center center; z-index: 10001; }
 				picture.cssbox img { display: block; position: relative; height: 90vh; visibility: hidden; }
 					picture.cssbox .close i { position: absolute; right: -15px; top: -15px; cursor: pointer; }
+			picture.cssbox[title]:after { display: block; position: absolute; right: 0; bottom: 0; left: 0; height: 20px; background-color: #fff; content: attr(title); text-align: center; }
 			
 			input.cssbox[type="radio"]:not(:checked) + picture.cssbox { background-image: none !important; }
 			input.cssbox[type="radio"]:checked + picture.cssbox { display: table; }
@@ -27,6 +28,7 @@
 					picture.cssbox label.nav i { display: block; position: relative; margin: 0 auto; text-align: center; line-height: 47px; }
 				picture.cssbox label.prev { left: 2px; border-radius: 0 10px 10px 0; }
 				picture.cssbox label.next { right: 2px; border-radius: 10px 0 0 10px; }
+			picture.cssbox[title]:after { right: 2px; bottom: 2px; left: 2px; border-radius: 0 0 8px 8px; height: 30px; line-height: 30px; }
 		</style>
 	</head>
 	<body>
@@ -38,14 +40,14 @@
 		<label class="cssbox" for="gallery01_6"><img src="//ununsplash.imgix.net/photo-1417021423914-070979c8eb34?fit=crop&w=200&h=200&q=75" alt="" /></label>
 		
 		<input class="cssbox" type="radio" name="gallery01" value="1" id="gallery01_1" />
-		<picture class="cssbox" style="background-image: url(//ununsplash.imgix.net/photo-1418065460487-3e41a6c84dc5?q=75);"><!-- container element, for styling purposes -->
+		<picture class="cssbox" title="The first picture of the gallery" style="background-image: url(//ununsplash.imgix.net/photo-1418065460487-3e41a6c84dc5?q=75);"><!-- container element, for styling purposes -->
 			<label for="gallery01_close" class="close"><i class="fa fa-lg fa-times-circle"></i></label><!-- stretch as background -->
 			<label class="nav next" for="gallery01_2"><i class="fa fa-2x fa-fw fa-arrow-right"></i></label><!-- navigation -->
 			<img src="//ununsplash.imgix.net/photo-1418065460487-3e41a6c84dc5?q=75&fit=max&w=200&h=200" alt="" /><!-- low res image, height is as big as possible using vh (viewport height) -->
 		</picture>
 		
 		<input class="cssbox" type="radio" name="gallery01" value="2" id="gallery01_2" />
-		<picture class="cssbox" style="background-image: url(//ununsplash.imgix.net/photo-1419064642531-e575728395f2?q=75);"><!-- container element, for styling purposes -->
+		<picture class="cssbox" title="The second picture of the gallery" style="background-image: url(//ununsplash.imgix.net/photo-1419064642531-e575728395f2?q=75);"><!-- container element, for styling purposes -->
 			<label for="gallery01_close" class="close"><i class="fa fa-lg fa-times-circle"></i></label><!-- stretch as background -->
 			<img src="//ununsplash.imgix.net/photo-1419064642531-e575728395f2?q=75&fit=max&w=200&h=200" alt="" /><!-- low res image, height is as big as possible using vh (viewport height) -->
 			<label class="nav prev" for="gallery01_1"><i class="fa fa-2x fa-fw fa-arrow-left"></i></label><!-- navigation -->
@@ -53,7 +55,7 @@
 		</picture>
 		
 		<input class="cssbox" type="radio" name="gallery01" value="3" id="gallery01_3" />
-		<picture class="cssbox" style="background-image: url(//ununsplash.imgix.net/photo-1417436026361-a033044d901f?q=75);"><!-- container element, for styling purposes -->
+		<picture class="cssbox" title="The third picture of the gallery" style="background-image: url(//ununsplash.imgix.net/photo-1417436026361-a033044d901f?q=75);"><!-- container element, for styling purposes -->
 			<label for="gallery01_close" class="close"><i class="fa fa-lg fa-times-circle"></i></label><!-- stretch as background -->
 			<img src="//ununsplash.imgix.net/photo-1417436026361-a033044d901f?q=75&fit=max&w=200&h=200" alt="" /><!-- low res image, height is as big as possible using vh (viewport height) -->
 			<label class="nav prev" for="gallery01_2"><i class="fa fa-2x fa-fw fa-arrow-left"></i></label><!-- navigation -->
@@ -61,7 +63,7 @@
 		</picture>
 		
 		<input class="cssbox" type="radio" name="gallery01" value="4" id="gallery01_4" />
-		<picture class="cssbox" style="background-image: url(//ununsplash.imgix.net/photo-1414502622871-b90b0bec7b1f?q=75);"><!-- container element, for styling purposes -->
+		<picture class="cssbox" title="The fourth picture of the gallery" style="background-image: url(//ununsplash.imgix.net/photo-1414502622871-b90b0bec7b1f?q=75);"><!-- container element, for styling purposes -->
 			<label for="gallery01_close" class="close"><i class="fa fa-lg fa-times-circle"></i></label><!-- stretch as background -->
 			<img src="//ununsplash.imgix.net/photo-1414502622871-b90b0bec7b1f?q=75&fit=max&w=200&h=200" alt="" /><!-- low res image, height is as big as possible using vh (viewport height) -->
 			<label class="nav prev" for="gallery01_3"><i class="fa fa-2x fa-fw fa-arrow-left"></i></label><!-- navigation -->
@@ -69,7 +71,7 @@
 		</picture>
 		
 		<input class="cssbox" type="radio" name="gallery01" value="5" id="gallery01_5" />
-		<picture class="cssbox" style="background-image: url(//ununsplash.imgix.net/photo-1416424500327-a57ace7358b8?q=75);"><!-- container element, for styling purposes -->
+		<picture class="cssbox" title="The fifth picture of the gallery" style="background-image: url(//ununsplash.imgix.net/photo-1416424500327-a57ace7358b8?q=75);"><!-- container element, for styling purposes -->
 			<label for="gallery01_close" class="close"><i class="fa fa-lg fa-times-circle"></i></label><!-- stretch as background -->
 			<img src="//ununsplash.imgix.net/photo-1416424500327-a57ace7358b8?q=75&fit=max&w=200&h=200" alt="" /><!-- low res image, height is as big as possible using vh (viewport height) -->
 			<label class="nav prev" for="gallery01_4"><i class="fa fa-2x fa-fw fa-arrow-left"></i></label><!-- navigation -->
@@ -77,7 +79,7 @@
 		</picture>
 		
 		<input class="cssbox" type="radio" name="gallery01" value="6" id="gallery01_6" />
-		<picture class="cssbox" style="background-image: url(//ununsplash.imgix.net/photo-1417021423914-070979c8eb34?q=75);"><!-- container element, for styling purposes -->
+		<picture class="cssbox" title="The last picture of the gallery" style="background-image: url(//ununsplash.imgix.net/photo-1417021423914-070979c8eb34?q=75);"><!-- container element, for styling purposes -->
 			<label for="gallery01_close" class="close"><i class="fa fa-lg fa-times-circle"></i></label><!-- stretch as background -->
 			<img src="//ununsplash.imgix.net/photo-1417021423914-070979c8eb34?q=75&fit=max&w=200&h=200" alt="" /><!-- low res image, height is as big as possible using vh (viewport height) -->
 			<label class="nav prev" for="gallery01_5"><i class="fa fa-2x fa-fw fa-arrow-left"></i></label><!-- navigation -->
