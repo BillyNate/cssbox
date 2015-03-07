@@ -10,11 +10,11 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
 		<![endif]-->
 		<style>
-			input.cssbox[type="radio"] { position: absolute; left: -999999px; top: 0; }
+			input.cssbox[type="radio"] { position: absolute; left: 0; top: 0; visibility: hidden; }
 			label.cssbox { cursor: pointer; }
 			.cssbox.overlay { display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; background-color: rgba(255,255,255,.9); z-index: 1000; }
 			picture.cssbox { display: none; position: absolute; left: 0; top: 0; margin: 5vh 0 0 50%; transform: translate(-50%, 0); background-color: #fff; background-repeat: no-repeat; background-size: cover; background-position: center center; z-index: 10001; }
-				picture.cssbox img { display: block; position: relative; height: 90vh; left: -999999%; }
+				picture.cssbox img { display: block; position: relative; height: 90vh; visibility: hidden; }
 					picture.cssbox .close i { position: absolute; right: -15px; top: -15px; cursor: pointer; }
 			
 			input.cssbox[type="radio"]:not(:checked) + picture.cssbox { background-image: none !important; }
