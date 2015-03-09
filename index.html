@@ -43,6 +43,18 @@
 				100% { background-size: 1em 1em, 1em 1em, 1em 1em, 0em 0em; background-position: calc(50% - 1.3em) 50%, 50% 50%, calc(50% + 1.3em) 50%, calc(50% + 1.3em) 50%; }
 			}
 			picture.cssbox:before { font-size: 15px; background-image: radial-gradient(#222 65%, transparent 70%), radial-gradient(#222 65%, transparent 70%), radial-gradient(#222 65%, transparent 70%), radial-gradient(#222 65%, transparent 70%); background-repeat: no-repeat; background-size: 1em 1em, 1em 1em, 1em 1em, 1em 1em; background-position: calc(50% - 1.3em) 50%, calc(50% - 1.3em) 50%, 50% 50%, calc(50% + 1.3em) 50%; animation: loadrunner .6s infinite; }
+			
+			/* TRANSITION EFFECT */
+			.cssbox.overlay { display: block; visibility: hidden; opacity: 0; transition: opacity .5s ease-in-out .5s, visibility 0s linear 1s; }
+			input.cssbox[type="radio"]:not(.close):checked ~ .cssbox.overlay { visibility: visible; opacity: 1; transition-delay: 0s, 0s; }
+			picture.cssbox { display: table; visibility: hidden; background-position: 999999px 999999px; margin-top: 50vh; transition: margin-top .5s ease-in-out .5s, visibility 0s linear 1s; }
+			input.cssbox[type="radio"]:checked + picture.cssbox { visibility: visible; margin-top: 5vh; transition-delay: 0s, 0s; }
+			picture.cssbox:before { display: none; }
+			input.cssbox[type="radio"]:checked + picture.cssbox:before { display: block; }
+				picture.cssbox img { height: 0; opacity: 0; transition: height .5s ease-in-out .5s, visibility 0s linear 1s, opacity .5s ease-in-out 0s; }
+				input.cssbox[type="radio"]:checked + picture.cssbox img { visibility: visible; height: 90vh; opacity: 1; transition-delay: 0s, 1s, 0s; }
+				picture.cssbox:after, picture.cssbox .nav, picture.cssbox p, picture.cssbox .close { opacity: 0; transition: opacity .5s ease-in-out; transition-delay: 0s; }
+				input.cssbox[type="radio"]:checked + picture.cssbox:after, input.cssbox[type="radio"]:checked + picture.cssbox .nav, input.cssbox[type="radio"]:checked + picture.cssbox p, input.cssbox[type="radio"]:checked + picture.cssbox .close { opacity: 1; transition-delay: .5s; }
 		</style>
 	</head>
 	<body>
