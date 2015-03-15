@@ -9,72 +9,10 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
 		<![endif]-->
-		<style>
-			input.cssbox[type="radio"] { position: absolute; left: 0; top: 0; visibility: hidden; }
-			label.cssbox { cursor: pointer; }
-			.cssbox.overlay { display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; background-color: rgba(255,255,255,.9); z-index: 10000; }
-			picture.cssbox { display: none; position: absolute; left: 0; top: 0; margin: 5vh 0 0 50vw; transform: translate(-50%, 0); background-color: #fff; background-repeat: no-repeat; background-size: cover; background-position: center center; z-index: 10001; }
-				picture.cssbox img { display: block; position: relative; height: 90vh; visibility: hidden; }
-				picture.cssbox .close { position: absolute; right: -15px; top: -15px; cursor: pointer; z-index: 4; }
-				picture.cssbox p { display: block; position: absolute; right: 0; bottom: 0; left: 0; height: 20px; padding: 0; margin: 0; background-color: #fff; content: attr(title); text-align: center; z-index: 3; }
-				
-			@media (orientation:portrait)
-			{
-				picture.cssbox { margin: 50% 0 0 5vh; transform: translate(0, -50%); }
-					picture.cssbox img { height: auto; width: 90vw; }
-			}
-			@media (max-width: 420px)
-			{
-				picture.cssbox .close { right: 5px; top: 6px; }
-			}
-			
-			input.cssbox[type="radio"]:not(:checked) + picture.cssbox { background-image: none !important; }
-			input.cssbox[type="radio"]:checked + picture.cssbox { display: table; }
-			input.cssbox[type="radio"]:not(.close):checked ~ .cssbox.overlay { display: block; }
-			
-			/* ADDITIONAL STYLING (INCLUDING OPTIONAL ELEMENTS) */
-			picture.cssbox { border: 2px solid #333; border-radius: 10px; }
-			
-				picture.cssbox label.nav { display: block; position: absolute; width: 60px; height: 50px; top: 50%; transform: translate(0,-50%); background-color: #fff; cursor: pointer; z-index: 4; }
-					picture.cssbox label.nav i { display: block; position: relative; margin: 0 auto; text-align: center; line-height: 47px; }
-				picture.cssbox label.prev { left: 2px; border-radius: 0 10px 10px 0; }
-				picture.cssbox label.next { right: 2px; border-radius: 10px 0 0 10px; }
-				picture.cssbox img { border-radius: 10px; margin: -1px; }
-				picture.cssbox p { right: 2px; bottom: 2px; left: 2px; border-radius: 0 0 8px 8px; height: 30px; line-height: 30px; }
-			
-			/* LOADER ANIMATION ENABLER */
-			picture.cssbox:before, picture.cssbox:after { content: ""; display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
-			picture.cssbox:before { z-index: 1; }
-			picture.cssbox:after { border: inherit; border-radius: inherit; background-image: inherit; background-color: transparent; background-repeat: no-repeat; background-size: cover; background-position: center center; z-index: 2; }
-			
-			/* ACTUAL LOADER ANIMATION */
-			@keyframes loadrunner
-			{
-				0% { background-size: 0em 0em, 1em 1em, 1em 1em, 1em 1em; background-position: calc(50% - 1.3em) 50%, calc(50% - 1.3em) 50%, 50% 50%, calc(50% + 1.3em) 50%; }
-				100% { background-size: 1em 1em, 1em 1em, 1em 1em, 0em 0em; background-position: calc(50% - 1.3em) 50%, 50% 50%, calc(50% + 1.3em) 50%, calc(50% + 1.3em) 50%; }
-			}
-			picture.cssbox:before { font-size: 15px; background-image: radial-gradient(#222 65%, transparent 70%), radial-gradient(#222 65%, transparent 70%), radial-gradient(#222 65%, transparent 70%), radial-gradient(#222 65%, transparent 70%); background-repeat: no-repeat; background-size: 1em 1em, 1em 1em, 1em 1em, 1em 1em; background-position: calc(50% - 1.3em) 50%, calc(50% - 1.3em) 50%, 50% 50%, calc(50% + 1.3em) 50%; animation: loadrunner .6s infinite; }
-			
-			/* TRANSITION EFFECT */
-			.cssbox.overlay { display: block; visibility: hidden; opacity: 0; transition: opacity .5s ease-in-out .5s, visibility 0s linear 1s; }
-			input.cssbox[type="radio"]:not(.close):checked ~ .cssbox.overlay { visibility: visible; opacity: 1; transition-delay: 0s, 0s; }
-			picture.cssbox { display: table; visibility: hidden; background-position: 999999px 999999px; margin-top: 50vh; transition: margin-top .5s ease-in-out .5s, margin-left .5s ease-in-out .5s, visibility 0s linear 1s, z-index 0s linear .5s; }
-			input.cssbox[type="radio"]:checked + picture.cssbox { visibility: visible; margin-top: 5vh; transition-delay: 0s, 0s, 0s, .5s; z-index: 10003; }
-			picture.cssbox:before { display: none; }
-			input.cssbox[type="radio"]:checked + picture.cssbox:before { display: block; }
-				picture.cssbox img { height: 0; opacity: 0; transition: height .5s ease-in-out .5s, width .5s ease-in-out .5s, visibility 0s linear 1s, opacity .5s ease-in-out 0s; }
-				input.cssbox[type="radio"]:checked + picture.cssbox img { visibility: visible; height: 90vh; opacity: 1; transition-delay: 0s, 0s, 1s, 0s; }
-				picture.cssbox:after, picture.cssbox .nav, picture.cssbox p, picture.cssbox .close { opacity: 0; transition: opacity .5s ease-in-out; transition-delay: 0s; }
-				input.cssbox[type="radio"]:checked + picture.cssbox:after, input.cssbox[type="radio"]:checked + picture.cssbox .nav, input.cssbox[type="radio"]:checked + picture.cssbox p, input.cssbox[type="radio"]:checked + picture.cssbox .close { opacity: 1; transition-delay: .5s; }
-			
-			@media (orientation:portrait)
-			{
-				picture.cssbox { margin-top: 50vh; margin-left: 50vw; }
-				input.cssbox[type="radio"]:checked + picture.cssbox { margin-top: 50vh; margin-left: 5vw; }
-					picture.cssbox img { width: 0; height: auto; }
-					input.cssbox[type="radio"]:checked + picture.cssbox img { width: 90vw; height: auto; }
-			}
-		</style>
+		<link rel="stylesheet" href="cssbox.css" />
+		<link rel="stylesheet" href="boxstyle.css" />
+		<link rel="stylesheet" href="loader.css" />
+		<link rel="stylesheet" href="transition.css" />
 	</head>
 	<body>
 		<label class="cssbox" for="gallery01_1" id="gallery01_1_label" role="button" aria-hidden="true"><img src="//ununsplash.imgix.net/photo-1418065460487-3e41a6c84dc5?fit=crop&w=200&h=200&q=75" alt="" /></label>
