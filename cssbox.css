@@ -1,6 +1,6 @@
 input.cssbox[type="radio"] { position: absolute; left: 0; top: 0; visibility: hidden; }
 label.cssbox { cursor: pointer; }
-.cssbox.overlay { display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; background-color: rgba(255,255,255,.9); z-index: 10000; }
+.cssbox-overlay { display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; background-color: rgba(255,255,255,.9); z-index: 10000; }
 .cssbox-box { display: none; position: absolute; left: 0; top: 0; margin: 5vh 0 0 50vw; transform: translate(-50%, 0); background-color: #fff; background-repeat: no-repeat; background-size: cover; background-position: center center; z-index: 10001; }
 	picture.cssbox-box img { display: block; position: relative; height: 90vh; visibility: hidden; }
 	.cssbox-box .close { position: absolute; right: -15px; top: -15px; cursor: pointer; z-index: 4; }
@@ -20,4 +20,4 @@ label.cssbox { cursor: pointer; }
 
 input.cssbox[type="radio"]:not(:checked) + .cssbox-box { background-image: none !important; }
 input.cssbox[type="radio"]:checked + .cssbox-box { display: table; }
-input.cssbox[type="radio"]:not(.close):checked ~ .cssbox.overlay { display: block; }
+input.cssbox[type="radio"]:not(.close):checked ~ .cssbox-overlay { display: block; }

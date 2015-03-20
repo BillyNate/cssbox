@@ -1,6 +1,6 @@
 /* TRANSITION EFFECT */
-.cssbox.overlay { display: block; visibility: hidden; opacity: 0; transition: opacity .5s ease-in-out .5s, visibility 0s linear 1s; }
-input.cssbox[type="radio"]:not(.close):checked ~ .cssbox.overlay { visibility: visible; opacity: 1; transition-delay: 0s, 0s; }
+.cssbox-overlay { display: block; visibility: hidden; opacity: 0; transition: opacity .5s ease-in-out .5s, visibility 0s linear 1s; }
+input.cssbox[type="radio"]:not(.close):checked ~ .cssbox-overlay { visibility: visible; opacity: 1; transition-delay: 0s, 0s; }
 .cssbox-box { display: table; visibility: hidden; background-position: 999999px 999999px; margin-top: 50vh; transition: margin-top .5s ease-in-out .5s, margin-left .5s ease-in-out .5s, visibility 0s linear 1s, z-index 0s linear .5s; }
 input.cssbox[type="radio"]:checked + .cssbox-box { visibility: visible; margin-top: 5vh; transition-delay: 0s, 0s, 0s, .5s; z-index: 10003; }
 .cssbox-box:before { display: none; }
