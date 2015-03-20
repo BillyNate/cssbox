@@ -1,21 +1,23 @@
 input.cssbox[type="radio"] { position: absolute; left: 0; top: 0; visibility: hidden; }
 label.cssbox { cursor: pointer; }
 .cssbox.overlay { display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; background-color: rgba(255,255,255,.9); z-index: 10000; }
-picture.cssbox { display: none; position: absolute; left: 0; top: 0; margin: 5vh 0 0 50vw; transform: translate(-50%, 0); background-color: #fff; background-repeat: no-repeat; background-size: cover; background-position: center center; z-index: 10001; }
-	picture.cssbox img { display: block; position: relative; height: 90vh; visibility: hidden; }
-	picture.cssbox .close { position: absolute; right: -15px; top: -15px; cursor: pointer; z-index: 4; }
-	picture.cssbox p { display: block; position: absolute; right: 0; bottom: 0; left: 0; height: 20px; padding: 0; margin: 0; background-color: #fff; content: attr(title); text-align: center; z-index: 3; }
+.cssbox-box { display: none; position: absolute; left: 0; top: 0; margin: 5vh 0 0 50vw; transform: translate(-50%, 0); background-color: #fff; background-repeat: no-repeat; background-size: cover; background-position: center center; z-index: 10001; }
+	picture.cssbox-box img { display: block; position: relative; height: 90vh; visibility: hidden; }
+	.cssbox-box .close { position: absolute; right: -15px; top: -15px; cursor: pointer; z-index: 4; }
+	picture.cssbox-box p { display: block; position: absolute; right: 0; bottom: 0; left: 0; height: 20px; padding: 0; margin: 0; background-color: #fff; content: attr(title); text-align: center; z-index: 3; }
+	
+	.cssbox-content { display: block; position: relative; width: 50vw; height: 85vh; border: none; overflow: auto; z-index: 3; background-color: #fff; }
 	
 @media (orientation:portrait)
 {
-	picture.cssbox { margin: 50% 0 0 5vh; transform: translate(0, -50%); }
-		picture.cssbox img { height: auto; width: 90vw; }
+	.cssbox-box { margin: 50% 0 0 5vh; transform: translate(0, -50%); }
+		picture.cssbox-box img { height: auto; width: 90vw; }
 }
 @media (max-width: 420px)
 {
-	picture.cssbox .close { right: 5px; top: 6px; }
+	.cssbox-box .close { right: 5px; top: 6px; }
 }
 
-input.cssbox[type="radio"]:not(:checked) + picture.cssbox { background-image: none !important; }
-input.cssbox[type="radio"]:checked + picture.cssbox { display: table; }
+input.cssbox[type="radio"]:not(:checked) + .cssbox-box { background-image: none !important; }
+input.cssbox[type="radio"]:checked + .cssbox-box { display: table; }
 input.cssbox[type="radio"]:not(.close):checked ~ .cssbox.overlay { display: block; }
