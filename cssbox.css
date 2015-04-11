@@ -21,3 +21,8 @@ label.cssbox { cursor: pointer; }
 input.cssbox[type="radio"]:not(:checked) + .cssbox-box { background-image: none !important; }
 input.cssbox[type="radio"]:checked + .cssbox-box { display: table; }
 input.cssbox[type="radio"]:not(.close):checked ~ .cssbox-overlay { display: block; }
+
+/* LOADER ANIMATION ENABLER */
+.cssbox-box:before, .cssbox-box:after { content: ""; display: block; position: absolute; }
+.cssbox-box:before { top: 50%; left: 50%; z-index: 1; }
+.cssbox-box:after { top: 0; right: 0; bottom: 0; left: 0; border: inherit; border-radius: inherit; background-image: inherit; background-color: transparent; background-repeat: no-repeat; background-size: cover; background-position: center center; z-index: 2; }
