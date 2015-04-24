@@ -1,0 +1,9 @@
+/* TRANSITION EFFECT */
+.cssbox-box { display: table; visibility: hidden; opacity: 0; background-position: 999999px 999999px; transition: visibility 0s linear 1s, opacity 1s ease-in-out 0s; }
+input.cssbox[type="radio"]:checked + .cssbox-box { visibility: visible; opacity: 1; transition-delay: 0s, 0s; }
+
+picture.cssbox-box img, .cssbox-box .cssbox-content { visibility: hidden; transform: scale(1.1, 1.1); border: inherit; transition: transform 1s cubic-bezier(1, 10, 1, 10) 0s, visibility 0s linear 1s, border-width .2s linear 0s, z-index 0s linear 0s; z-index: 5; }
+input.cssbox[type="radio"]:checked + picture.cssbox-box img, input.cssbox[type="radio"]:checked + .cssbox-box .cssbox-content { visibility: visible; transform: scale(1, 1); border-width: 0; transition-delay: 0s, 0s, 0s, .8s, 1s; transition-timing-function: cubic-bezier(0, -10, 0, -10), linear, linear, linear; z-index: 0; }
+input.cssbox[type="radio"]:checked + .cssbox-box .cssbox-content { z-index: 3; }
+	.cssbox-box:after, .cssbox-box .nav, picture.cssbox-box p, .cssbox-box .close { opacity: 0; transition: opacity .1s ease-in-out 0s; }
+	input.cssbox[type="radio"]:checked + .cssbox-box:after, input.cssbox[type="radio"]:checked + .cssbox-box .nav, input.cssbox[type="radio"]:checked + picture.cssbox-box p, input.cssbox[type="radio"]:checked + .cssbox-box .close { opacity: 1; transition-delay: .9s; }
