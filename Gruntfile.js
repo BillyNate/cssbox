@@ -3,13 +3,15 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    copy: {
-      main: {
-        expand: true,
-        cwd: 'src/demo/',
-        src: ['**/*.html'],
-        dest: 'demo/',
-        flatten: true
+    jade: {
+      compile: {
+          files: [{
+              expand: true,
+              cwd: 'src/demo/jade/',
+              src: ['**/*.jade'],
+              dest: 'demo/',
+              ext: '.html'
+          }]
       }
     },
     autoprefixer: {
@@ -45,12 +47,12 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['src/demo/**/*.html','src/css/**/*.css'],
+      files: ['src/demo/**/*.jade','src/css/**/*.css'],
       tasks: ['default']
     }
   });
   
-  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-jade');
 
   grunt.loadNpmTasks('grunt-autoprefixer');
 
@@ -58,7 +60,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['copy','autoprefixer','cssmin']);
+  grunt.registerTask('default', ['jade','autoprefixer','cssmin']);
 
   grunt.registerTask('deploy', ['default']);
 

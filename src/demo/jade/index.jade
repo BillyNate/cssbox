@@ -1,0 +1,55 @@
+- var config = { title: 'CSSBox' }
+- var i = 0;
+- var gallery = [{'i':'first','url':'//ununsplash.imgix.net/photo-1418065460487-3e41a6c84dc5'}, {'i':'second','url':'//ununsplash.imgix.net/photo-1419064642531-e575728395f2'}, {'i':'third','url':'//ununsplash.imgix.net/photo-1417436026361-a033044d901f'}, {'i':'fourth','url':'//ununsplash.imgix.net/photo-1414502622871-b90b0bec7b1f'}, {'i':'fifth','url':'//ununsplash.imgix.net/photo-1416424500327-a57ace7358b8'}, {'i':'last','url':'//ununsplash.imgix.net/photo-1417021423914-070979c8eb34'}]
+- var other = [{'alt':'Inline','url':'http://sd.keepcalm-o-matic.co.uk/i/lorem-ipsum-dolor-sit-amet-5.png'}, {'alt':'iframe','url':'http://assets-slidedeck2.s3.amazonaws.com/wp-content/uploads/2012/08/jobs_iframe.jpg'}]
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title=config.title
+		meta(property="og:title", content=config.title)
+		meta(property="og:type", content="website")
+		link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css")
+		<!--[if (gte IE 6)&(lte IE 8)]>
+		script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+		script(src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js")
+		<![endif]-->
+		link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/css-spinning-spinners/1.1.0/load4.css")
+		link(rel="stylesheet", href="css/page.css")
+		link(rel="stylesheet", href="../dist/css/cssbox.css")
+		link(rel="stylesheet", href="../dist/css/boxstyle6.css")
+		link(rel="stylesheet", href="../dist/css/transition1.css")
+	body
+		- for(i=0; i<gallery.length; i++)
+			label.cssbox(for="gallery01_#{i}", id="gallery01_#{i}_label" role="button", aria-hidden="true")
+				img(src=gallery[i].url+"?fit=crop&w=200&h=200&q=75", alt="")
+		- for(i; i<gallery.length+other.length; i++)
+			label.cssbox(for="gallery01_#{i}", id="gallery01_#{i}_label" role="button", aria-hidden="true")
+				img(src=other[i-gallery.length].url, alt=other[i-gallery.length].alt, width="200", height="200")
+		- for(i=0; i<gallery.length; i++)
+			input.cssbox(type="radio", name="gallery01", value="#{i}", id="gallery01_#{i}", role="button", aria-controls="gallery01_#{i}_picture", aria-hidden="true")
+			picture.cssbox-box.loading(style="background-image: url("+gallery[i].url+"?q=75)", id="gallery01_#{i}_picture", role="presentation", aria-labelledby="gallery01_#{i}_label")
+				label.close(for="gallery01_close", role="button") close
+				img(src=gallery[i].url+"?q=75&fit=max&w=200&h=200", alt="")
+				- if(i > 0)
+					label.nav.prev(for="gallery01_#{i-1}", role="navigation") previous
+				label.nav.next(for="gallery01_#{i+1}", role="navigation") next
+				p(role="note") The #{gallery[i].i} picture of the gallery
+		input.cssbox(type="radio", name="gallery01", value="#{i}", id="gallery01_#{i}", role="button", aria-controls="gallery01_#{i}_picture", aria-hidden="true")
+		div.cssbox-box(id="gallery01_#{i}_picture", role="presentation", aria-labelledby="gallery01_#{i}_label")
+			div.cssbox-content
+				p
+					<img src="//unsplash.imgix.net/photo-1416400453940-65c69d70ad91?s=54806c1456b35f1d56ca356663d1bdd2&fit=crop&w=100&h=100&q=75&fm=jpg" alt="" /> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam neque nisl, viverra at vestibulum vitae, luctus sed felis. Donec augue nibh, laoreet sed luctus id, facilisis a risus. Phasellus felis ligula, rhoncus non rutrum a, egestas vel nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed quis interdum purus. Phasellus id purus nisl. Praesent vulputate cursus nulla, eget egestas lorem vestibulum ut. Donec non pellentesque orci. Praesent faucibus dui scelerisque ligula euismod non hendrerit arcu placerat. Aliquam pharetra mollis augue quis tincidunt. Aliquam non tincidunt dolor. Fusce eleifend feugiat tortor nec sollicitudin. Ut non congue magna. Ut sit amet lacus lectus, sit amet dictum arcu. Cras consequat felis sit amet purus aliquet vel pretium justo fringilla. Maecenas vitae felis et metus lobortis ultrices vel eget odio. Sed molestie augue ac mauris ultrices eu euismod tortor ullamcorper. Morbi tincidunt dui a erat porttitor adipiscing. Integer eu dolor est, a dictum mi.
+				p
+					<img src="//ununsplash.imgix.net/photo-1415904663467-dfdc16cae794?s=9687915831b6fd40e033578351e1f6d4&fit=crop&w=100&h=100&q=75&fm=jpg" alt="" /> Duis risus erat, vestibulum sollicitudin tincidunt vel, ultricies at lacus. Vestibulum pharetra tristique tortor at eleifend. Nulla facilisi. Cras quis nulla nibh. Nullam fermentum dapibus nulla id convallis. Nam aliquam lectus vitae magna rhoncus quis pellentesque risus vehicula. Maecenas laoreet suscipit placerat. Mauris ut leo ac odio semper scelerisque at quis velit. Integer pellentesque magna at ligula condimentum in molestie dolor laoreet. Curabitur nec nisl ut nisl pretium hendrerit vel quis metus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque et eros eu orci porttitor dignissim. Proin tempus erat sit amet mi accumsan at imperdiet lorem blandit. Vestibulum sit amet facilisis tortor. Phasellus venenatis vestibulum enim, nec fringilla nunc egestas quis. Morbi eu urna dui. <br /><br />Praesent bibendum condimentum congue. Fusce orci lorem, euismod vitae pellentesque dapibus, faucibus eu dui. Vivamus mauris est, accumsan consectetur pellentesque et, lobortis ac felis. Nulla condimentum facilisis urna, quis bibendum dui ultricies sed. Nunc interdum massa vel est vulputate vel volutpat velit pharetra. Donec fermentum massa viverra diam ullamcorper porta. Morbi convallis orci sed est rhoncus ullamcorper. Nam ante quam, ornare sed lacinia eget, cursus nec metus. Pellentesque vehicula viverra iaculis. Ut consequat viverra libero, nec iaculis erat vestibulum nec. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales pellentesque erat, id consequat eros fermentum ac. Suspendisse porta vehicula vehicula. Etiam eleifend, dolor a blandit rhoncus, quam lacus volutpat libero, in volutpat justo sapien quis ante. Nunc nec lorem porttitor purus bibendum vulputate. Suspendisse ultrices arcu non erat eleifend adipiscing. Phasellus pretium volutpat orci, a dapibus velit gravida quis. Nunc aliquam gravida tellus.
+			label.nav.prev(for="gallery01_#{i-1}", role="navigation") previous
+			label.nav.next(for="gallery01_#{i+1}", role="navigation") next
+			label.close(for="gallery01_close", role="button") close
+		- i++
+		input.cssbox(type="radio", name="gallery01", value="#{i}", id="gallery01_#{i}", role="button", aria-controls="gallery01_#{i}_picture", aria-hidden="true")
+		div.cssbox-box.loading(id="gallery01_#{i}_picture", role="presentation", aria-labelledby="gallery01_#{i}_label")
+			iframe.cssbox-content(src="iframe-content.html")
+			label.nav.prev(for="gallery01_#{i-1}", role="navigation") previous
+			label.close(for="gallery01_close", role="button") close
+		input.cssbox.close(type="radio", name="gallery01", value="close", id="gallery01_close", role="button", aria-hidden="true")
+		label.cssbox-overlay(for="gallery01_close", role="presentation")
