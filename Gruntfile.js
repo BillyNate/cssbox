@@ -58,8 +58,10 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['copy','autoprefixer','cssmin','watch']);
+  grunt.registerTask('default', ['copy','autoprefixer','cssmin']);
 
-  grunt.registerTask('deploy', ['copy','autoprefixer','cssmin']);
+  grunt.registerTask('deploy', ['default']);
+
+  grunt.registerTask('dev', ['default','watch']);
 
 };
