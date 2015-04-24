@@ -26,5 +26,5 @@
 	.cssbox-content { padding: 0 20px; margin: 20px 0; }
 	iframe.cssbox-content { padding: 0; }
 	
-	.cssbox-content ~ label.prev { left: -60px; }
-	.cssbox-content ~ label.next { right: -60px; }
+	.cssbox-content ~ label.prev { left: -60px; border-radius: 10px 0 0 10px; }
+	.cssbox-content ~ label.next { right: -60px; border-radius: 0 10px 10px 0; }
