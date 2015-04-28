@@ -9,7 +9,7 @@
 	.cssbox-box label.nav:after { left: 15px; top: 19px; width: 21px; height: 7px; border-radius: 4px; background-color: #000; }
 	.cssbox-box label.next:before { left: auto; right: 12px; transform: rotate(225deg); }
 	.cssbox-box label.next:after { left: auto; right: 15px; }
-	picture.cssbox-box img { border-radius: 10px; margin: -1px; }
+	picture.cssbox-box img { height: calc(90vh - 22px); border-radius: 10px; margin: -1px; }
 	.cssbox-box .close { right: 2px; top: 2px; border-radius: 0 0 0 10px; font-size: 23px; width: 2em; height: 2em; background-color: #fff; overflow: hidden; text-indent: -999999px; }
 	.cssbox-box .close:before, .cssbox-box .close:after { content: ""; display: block; position: absolute; top: 13px; background-color: transparent; width: 13px; height: 13px; border-left: 6px solid #000; border-bottom: 6px solid #000; border-radius: 5px; }
 	.cssbox-box .close:before { right: 6px; transform: rotate(45deg); }
@@ -21,7 +21,7 @@
 	.cssbox-box { margin-top: 50vh; margin-left: 50vw; }
 	input.cssbox[type="radio"]:checked + .cssbox-box { margin-top: 50vh; margin-left: 5vw; }
 		picture.cssbox-box img { width: 0; height: auto; }
-		input.cssbox[type="radio"]:checked + .cssbox-box img { width: 90vw; height: auto; }
+		input.cssbox[type="radio"]:checked + .cssbox-box img { width: calc(90vw - 22px); height: auto; }
 }
 
 	.cssbox-content { padding: 0 20px; margin: 20px 0; }
