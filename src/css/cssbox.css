@@ -1,7 +1,7 @@
 .cssbox-select { position: absolute; left: 0; top: 0; visibility: hidden; }
 .cssbox-button { cursor: pointer; }
-.cssbox-overlay { display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; background-color: rgba(255,255,255,.9); z-index: 10000; }
-.cssbox-box { display: none; position: absolute; left: 0; top: 0; margin: 5vh 0 0 50vw; transform: translate(-50%, 0); background-color: #fff; background-repeat: no-repeat; background-size: cover; background-position: center center; z-index: 10001; }
+.cssbox-overlay { display: none; position: fixed; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; background-color: rgba(255,255,255,.9); z-index: 10000; }
+.cssbox-box { display: none; position: fixed; left: 0; top: 0; margin: 5vh 0 0 50vw; transform: translate(-50%, 0); background-color: #fff; background-repeat: no-repeat; background-size: cover; background-position: center center; z-index: 10001; }
 	picture.cssbox-box img { display: block; position: relative; height: 90vh; visibility: hidden; }
 	.cssbox-box .close { position: absolute; right: -15px; top: -15px; cursor: pointer; z-index: 4; }
 	picture.cssbox-box p { display: block; position: absolute; right: 0; bottom: 0; left: 0; height: 20px; padding: 0; margin: 0; background-color: #fff; content: attr(title); text-align: center; z-index: 3; }
