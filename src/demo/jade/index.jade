@@ -22,7 +22,7 @@ html(lang="en")
 	body
 		- for(i=0; i<gallery.length; i++)
 			label.cssbox-button(for="gallery01_#{i}", id="gallery01_#{i}_label" role="button", aria-hidden="true")
-				img(src=gallery[i].url+"?fit=crop&w=200&h=200&q=75", alt="")
+				img(src=gallery[i].url+"?fit=max&w=1000&h=200&q=75", alt="")
 		- for(i; i<gallery.length+other.length; i++)
 			label.cssbox-button(for="gallery01_#{i}", id="gallery01_#{i}_label" role="button", aria-hidden="true")
 				img(src=other[i-gallery.length].url, alt=other[i-gallery.length].alt, width="200", height="200")
@@ -30,7 +30,7 @@ html(lang="en")
 			input.cssbox-select(type="radio", name="gallery01", value="#{i}", id="gallery01_#{i}", role="button", aria-controls="gallery01_#{i}_picture", aria-hidden="true")
 			picture.cssbox-box.loading(style="background-image: url("+gallery[i].url+"?q=75)", id="gallery01_#{i}_picture", role="presentation", aria-labelledby="gallery01_#{i}_label")
 				label.close(for="gallery01_close", role="button") close
-				img(src=gallery[i].url+"?q=75&fit=max&w=200&h=200", alt="")
+				img(src=gallery[i].url+"?fit=max&w=1000&h=200&q=75", alt="")
 				- if(i > 0)
 					label.nav.prev(for="gallery01_#{i-1}", role="navigation") previous
 				label.nav.next(for="gallery01_#{i+1}", role="navigation") next
