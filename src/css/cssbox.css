@@ -1,5 +1,5 @@
-input.cssbox[type="radio"] { position: absolute; left: 0; top: 0; visibility: hidden; }
-label.cssbox { cursor: pointer; }
+.cssbox-select { position: absolute; left: 0; top: 0; visibility: hidden; }
+.cssbox-button { cursor: pointer; }
 .cssbox-overlay { display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; background-color: rgba(255,255,255,.9); z-index: 10000; }
 .cssbox-box { display: none; position: absolute; left: 0; top: 0; margin: 5vh 0 0 50vw; transform: translate(-50%, 0); background-color: #fff; background-repeat: no-repeat; background-size: cover; background-position: center center; z-index: 10001; }
 	picture.cssbox-box img { display: block; position: relative; height: 90vh; visibility: hidden; }
@@ -18,9 +18,9 @@ label.cssbox { cursor: pointer; }
 	.cssbox-box .close { right: 5px; top: 6px; }
 }
 
-input.cssbox[type="radio"]:not(:checked) + .cssbox-box { background-image: none !important; }
-input.cssbox[type="radio"]:checked + .cssbox-box { display: table; }
-input.cssbox[type="radio"]:not(.close):checked ~ .cssbox-overlay { display: block; }
+.cssbox-select:not(:checked) + .cssbox-box { background-image: none !important; }
+.cssbox-select:checked + .cssbox-box { display: table; }
+.cssbox-select:not(.close):checked ~ .cssbox-overlay { display: block; }
 
 /* LOADER ANIMATION ENABLER */
 .cssbox-box:before, .cssbox-box:after { content: ""; display: block; position: absolute; }

@@ -20,9 +20,9 @@
 @media (orientation:portrait)
 {
 	.cssbox-box { margin-top: 50vh; margin-left: 50vw; }
-	input.cssbox[type="radio"]:checked + .cssbox-box { margin-top: 50vh; margin-left: 5vw; }
+	.cssbox-select:checked + .cssbox-box { margin-top: 50vh; margin-left: 5vw; }
 		picture.cssbox-box img { width: 0; height: auto; }
-		input.cssbox[type="radio"]:checked + .cssbox-box img { width: calc(90vw - 10px); height: auto; }
+		.cssbox-select:checked + .cssbox-box img { width: calc(90vw - 10px); height: auto; }
 }
 
 	.cssbox-content { padding: 0 20px; margin: 20px 0; }
