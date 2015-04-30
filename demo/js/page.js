@@ -1,0 +1,1 @@
+window.addEventListener("load",function(){for(var a=document.getElementsByClassName("cssbox-box"),b=0;b<a.length;b++)["openStart","openEnd","switchStart","switchEnd","closeStart","closeEnd"].forEach(function(c){a[b].addEventListener(c,function(a){console.log(a)},!1)})});

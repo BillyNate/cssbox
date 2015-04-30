@@ -46,6 +46,24 @@ module.exports = function(grunt) {
         }]
       }
     },
+    uglify: {
+      js: {
+        files : [
+          {
+            expand: true,
+            flatten: true,
+            src: 'src/js/*.js',
+            dest: 'dist/js/'
+          },
+          {
+            expand: true,
+            flatten: true,
+            src: 'src/demo/js/*.js',
+            dest: 'demo/js/'
+          }
+        ]
+      }
+    },
     watch: {
       files: ['src/demo/**/*.jade','src/css/**/*.css'],
       tasks: ['default']
@@ -60,7 +78,9 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['jade','autoprefixer','cssmin']);
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+
+  grunt.registerTask('default', ['jade','autoprefixer','cssmin','uglify']);
 
   grunt.registerTask('deploy', ['default']);
 
