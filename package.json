@@ -1,6 +1,6 @@
 {
   "name": "cssbox",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A pure css lightbox",
   "main": "Gruntfile.js",
   "scripts": {
