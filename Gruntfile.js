@@ -84,7 +84,7 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['src/demo/*.jade','src/generator/*.jade','src/css/*.css','src/demo/css/*.css','src/generator/css/*.css','src/js/*.js','src/demo/js/*.js','src/generator/js/*.js'],
+      files: ['src/demo/jade/*.jade','src/generator/jade/*.jade','src/css/*.css','src/demo/css/*.css','src/generator/css/*.css','src/js/*.js','src/demo/js/*.js','src/generator/js/*.js'],
       tasks: ['default']
     }
   });
