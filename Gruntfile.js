@@ -11,6 +11,13 @@ module.exports = function(grunt) {
               src: ['**/*.jade'],
               dest: 'demo/',
               ext: '.html'
+          },
+          {
+              expand: true,
+              cwd: 'src/generator/jade/',
+              src: ['**/*.jade'],
+              dest: 'generator/',
+              ext: '.html'
           }]
       }
     },
@@ -31,6 +38,12 @@ module.exports = function(grunt) {
             flatten: true,
             src: 'src/demo/css/*.css',
             dest: 'demo/css/'
+          },
+          {
+            expand: true,
+            flatten: true,
+            src: 'src/generator/css/*.css',
+            dest: 'generator/css/'
           }
         ]
       }
@@ -60,12 +73,18 @@ module.exports = function(grunt) {
             flatten: true,
             src: 'src/demo/js/*.js',
             dest: 'demo/js/'
+          },
+          {
+            expand: true,
+            flatten: true,
+            src: 'src/generator/js/*.js',
+            dest: 'generator/js/'
           }
         ]
       }
     },
     watch: {
-      files: ['src/demo/**/*.jade','src/css/**/*.css'],
+      files: ['src/demo/*.jade','src/generator/*.jade','src/css/*.css','src/demo/css/*.css','src/generator/css/*.css','src/js/*.js','src/demo/js/*.js','src/generator/js/*.js'],
       tasks: ['default']
     }
   });
