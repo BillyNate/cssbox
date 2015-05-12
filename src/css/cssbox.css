@@ -1,7 +1,7 @@
 .cssbox-select { position: absolute; left: 0; top: 0; visibility: hidden; }
 .cssbox-button { cursor: pointer; }
 .cssbox-overlay { display: none; position: fixed; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; background-color: rgba(255,255,255,.9); z-index: 10000; }
-.cssbox-box { display: none; position: fixed; left: 0; top: 0; margin: 5vh 0 0 50vw; transform: translate(-50%, 0); background-color: #fff; background-repeat: no-repeat; background-size: cover; background-position: center center; z-index: 10001; }
+.cssbox-box { display: none; position: fixed; left: 0; top: 0; margin: 5vh 0 0 50vw; transform: translate(-50%, 0); background-color: #fff; background-repeat: no-repeat; background-size: cover; background-position: 100vw 100vh; z-index: 10001; }
 	picture.cssbox-box img { display: block; position: relative; height: 90vh; visibility: hidden; }
 	.cssbox-box .close { position: absolute; right: -15px; top: -15px; cursor: pointer; z-index: 4; }
 	picture.cssbox-box p { display: block; position: absolute; right: 0; bottom: 0; left: 0; height: 20px; padding: 0; margin: 0; background-color: #fff; content: attr(title); text-align: center; z-index: 3; }
@@ -19,10 +19,10 @@
 }
 
 .cssbox-select:not(:checked) + .cssbox-box { background-image: none !important; }
-.cssbox-select:checked + .cssbox-box { display: table; }
+.cssbox-select:checked + .cssbox-box { display: block; }
 .cssbox-select:not(.close):checked ~ .cssbox-overlay { display: block; }
 
 /* LOADER ANIMATION ENABLER */
 .cssbox-box:before, .cssbox-box:after { content: ""; display: block; position: absolute; }
 .cssbox-box:before { top: 50%; left: 50%; z-index: 1; }
-.cssbox-box:after { top: 0; right: 0; bottom: 0; left: 0; border: inherit; border-radius: inherit; background-image: inherit; background-color: transparent; background-repeat: no-repeat; background-size: cover; background-position: center center; z-index: 2; }
+.cssbox-box:after { top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; background-image: inherit; background-color: transparent; background-repeat: no-repeat; background-size: cover; background-position: center center; z-index: 2; }

@@ -1,5 +1,5 @@
 /* TRANSITION EFFECT */
-.cssbox-box { display: table; visibility: hidden; opacity: 0; background-position: 999999px 999999px; transition: visibility 0s linear 1s, opacity 1s ease-in-out 0s; }
+.cssbox-box { display: block; visibility: hidden; opacity: 0; background-position: 999999px 999999px; transition: visibility 0s linear 1s, opacity 1s ease-in-out 0s; }
 .cssbox-select:checked + .cssbox-box { visibility: visible; opacity: 1; transition-delay: 0s, 0s; }
 
 picture.cssbox-box img, .cssbox-box .cssbox-content { visibility: hidden; transform: scale(1.1, 1.1); border: inherit; transition: transform 1s cubic-bezier(1, 10, 1, 10) 0s, visibility 0s linear 1s, border-width .2s linear 0s, z-index 0s linear 0s; z-index: 5; }

@@ -2,19 +2,19 @@
 .cssbox-box { border: 7px solid #fff; border-radius: 5px; box-shadow: 0 0 0 14px rgba(0,0,0,.8); }
 .cssbox-overlay { background: repeating-linear-gradient( 135deg, rgba(27,27,27,0.9), rgba(27,27,27,0.9) 2px, rgba(7,7,7,0.9) 2px, rgba(7,7,7,0.9) 7px); }
 
-	.cssbox-box label.nav { display: block; position: absolute; width: 17px; height: 17px; bottom: 7px; border: 2px solid #ccc; border-radius: 50%; background-color: #fff; overflow: hidden; text-indent: -999999px; cursor: pointer; z-index: 4; }
-	.cssbox-box label.prev { left: 10px; }
-	.cssbox-box label.next { left: 40px; }
+	.cssbox-box label.nav { display: block; position: absolute; width: 17px; height: 17px; bottom: 0; border: 2px solid #ccc; border-radius: 50%; background-color: #fff; overflow: hidden; text-indent: -999999px; cursor: pointer; z-index: 4; }
+	.cssbox-box label.prev { left: 3px; }
+	.cssbox-box label.next { left: 33px; }
 	.cssbox-box label.nav:before, .cssbox-box label.nav:after { content: ""; display: block; position: absolute; }
 	.cssbox-box label.nav:before { left: 4px; top: 5px; width: 5px; height: 5px; border-left: 3px solid #666; border-bottom: 3px solid #666; border-radius: 2px; transform: rotate(45deg); z-index: 5; }
 	.cssbox-box label.nav:after { left: 5px; top: 8px; width: 7px; height: 3px; border-radius: 2px; background-color: #666; }
 	.cssbox-box label.next:before { left: auto; right: 4px; transform: rotate(225deg); }
 	picture.cssbox-box img { height: calc(90vh - 14px); border-radius: 10px; margin: -1px; }
-	.cssbox-box .close { right: 8px; top: auto; bottom: 8px; font-size: 15px; width: 1em; height: 1em; border: .15em solid #ccc; border-radius: 50%; background-color: #fff; overflow: hidden; transform: rotate(45deg); text-indent: -999999px; }
+	.cssbox-box .close { top: auto; bottom: 1px; right: 1px; font-size: 15px; width: 1em; height: 1em; border: .15em solid #ccc; border-radius: 50%; background-color: #fff; overflow: hidden; transform: rotate(45deg); text-indent: -999999px; }
 	.cssbox-box .close:before, .cssbox-box .close:after { content: ""; display: block; position: absolute; background-color: transparent; }
 	.cssbox-box .close:before { top: .25em; left: .1em; width: .8em; height: .15em; border-bottom: .2em solid; border-color: #666; }
 	.cssbox-box .close:after { top: .1em; left: .4em; width: .15em; height: .8em; border-left: .2em solid; border-color: #666; }
-	picture.cssbox-box p { right: 2px; bottom: 2px; left: 2px; border-radius: 0 0 8px 8px; height: 30px; line-height: 30px; color: #666; }
+	picture.cssbox-box p { right: -5px; bottom: -5px; left: -5px; border-radius: 0 0 8px 8px; height: 30px; line-height: 30px; color: #666; }
 
 @media (orientation:portrait)
 {
