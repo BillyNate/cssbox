@@ -1,0 +1,21 @@
+branches:
+    only:
+        - master
+
+language: node_js
+
+node_js:
+    - "stable"
+
+env:
+    global:
+        secure: "pBb8RHrmwIgTtf1hzt0FzARD+v57nTYEgBl5A+labURBhzBLt1DJIy9LiUxLmWTmAwoaP//1F4pWoCoYHMXNwg+SJb79KTc/i0qFMXN650Mhr1/v/zKyex4U8FRxQF1i47+9BrC17eItlZopwv4SuHbA9sR9t76RR1J39PrMajs="
+
+before_install:
+    - npm install -g grunt-cli
+
+install:
+    - npm install
+
+script:
+    - grunt deploy

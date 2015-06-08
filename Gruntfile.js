@@ -86,8 +86,46 @@ module.exports = function(grunt) {
     watch: {
       files: ['src/demo/jade/*.jade','src/generator/jade/*.jade','src/css/*.css','src/demo/css/*.css','src/generator/css/*.css','src/js/*.js','src/demo/js/*.js','src/generator/js/*.js'],
       tasks: ['default']
+    },
+    'gh-pages': {
+      options: {
+        branch: 'gh-pages',
+        only: ['**/*','!README.md','!images/**/*'],
+      },
+      deploy: {
+        options: {
+          move: [{base: 'generator/', src: '**/*', dest: '/'}, {base: 'dist/', src: '**/*', dest: '/'}],
+          replace: [{files: ['index.html','js/page.js'], regex: /\.\.\/dist\/css/g, replacement: 'css'}, {files: 'demo/*.html', regex: /\.\.\/dist\/css/g, replacement: '../css'}, {files: 'demo/*.html', regex: /\.\.\/dist\/js/g, replacement: '../js'}],
+          user: {
+            name: 'Travis CI',
+            email: 'travis@billynate.com'
+          },
+          repo: 'https://' + process.env.GH_TOKEN + '@github.com/' + process.env.TRAVIS_REPO_SLUG,
+          silent: true,
+          message: 'Travis build ' + getDeployMessage()
+        },
+        src: ['demo/**/*','dist/**/*','generator/**/*']
+      }
     }
   });
+
+  // get a formatted commit message to review changes from the commit log
+  // github will turn some of these into clickable links
+  function getDeployMessage()
+  {
+    var ret = '\n\n';
+    if(process.env.TRAVIS !== 'true')
+    {
+      ret += 'missing env vars for travis-ci';
+      return ret;
+    }
+    ret += 'branch:       ' + process.env.TRAVIS_BRANCH + '\n';
+    ret += 'SHA:          ' + process.env.TRAVIS_COMMIT + '\n';
+    ret += 'range SHA:    ' + process.env.TRAVIS_COMMIT_RANGE + '\n';
+    ret += 'build id:     ' + process.env.TRAVIS_BUILD_ID  + '\n';
+    ret += 'build number: ' + process.env.TRAVIS_BUILD_NUMBER + '\n';
+    return ret;
+  }
   
   grunt.loadNpmTasks('grunt-contrib-jade');
 
@@ -99,9 +137,11 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
+  grunt.loadNpmTasks('grunt-gh-pages');
+
   grunt.registerTask('default', ['jade','autoprefixer','cssmin','uglify']);
 
-  grunt.registerTask('deploy', ['default']);
+  grunt.registerTask('deploy', ['gh-pages']);
 
   grunt.registerTask('dev', ['default','watch']);
 
