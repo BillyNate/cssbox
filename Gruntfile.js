@@ -8,7 +8,7 @@ module.exports = function(grunt) {
           files: [{
               expand: true,
               cwd: 'src/demo/jade/',
-              src: ['**/*.jade'],
+              src: ['**/*.jade','!html-content.jade'],
               dest: 'demo/',
               ext: '.html'
           },
