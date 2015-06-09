@@ -34,9 +34,7 @@ section.code { font-family: "Courier New", Courier, monospace; }
 button { display: block; position: absolute; width: 93px; height: 93px; padding: 0; line-height: 111px; border: none; -webkit-border-radius: 50%; border-radius: 50%; -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1); box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1); background-color: #33a9dc; overflow: hidden; text-align: center; color: #fff; -webkit-transition: -webkit-transform .2s ease-out, -webkit-box-shadow .2s ease-out; transition: transform .2s ease-out, box-shadow .2s ease-out; }
 button:hover { -webkit-transform: translate(0,-1px); transform: translate(0,-1px); -webkit-box-shadow: 0px 4px 2px 1px rgba(0, 0, 0, 0.1); box-shadow: 0px 4px 2px 1px rgba(0, 0, 0, 0.1); }
 button:active { -webkit-transform: translate(0,1px); transform: translate(0,1px); -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1); box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1); }
-	button:before, button:after { content: ""; display: block; position: absolute; }
-	button:before { background-color: #1572b6; -webkit-transform: rotate(45deg); transform: rotate(45deg); z-index: 1; }
-	button i { z-index: 3; }
+	button:before { content: ""; display: block; position: absolute; background-color: #1572b6; -webkit-transform: rotate(45deg); transform: rotate(45deg); }
 button.test { position: fixed; right: 30px; bottom: 30px; text-indent: 2px; }
 	button.test:before { left: 27px; top: 40px; width: 57px; height: 36px; border-top: 10px solid #1572b6; border-left: 10px solid #33a9dc; }
 button.share { right: left; top: 0; z-index: 1; text-indent: -4px; -webkit-transition: top .2s linear; transition: top .2s linear; }
