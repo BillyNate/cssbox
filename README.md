@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/BillyNate/cssbox.svg?branch=master)](https://travis-ci.org/BillyNate/cssbox)
+
 #GENERATOR & DEMO
 
 This branch contains the files for the generator and the demo.
