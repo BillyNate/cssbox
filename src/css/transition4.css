@@ -3,5 +3,5 @@
 .cssbox-select:not(.close):checked ~ .cssbox-overlay { visibility: visible; opacity: 1; transition-delay: 0s, 0s; }
 
 .cssbox-box { display: block; visibility: hidden; opacity: 0; transform: translate(-50%, 0) perspective(70em) rotateY(-90deg); transition: visibility 0s linear .43s, opacity 0s linear .43s, transform .5s cubic-bezier(1, -1.475, 1, -1.475) 0s; }
-.cssbox-select:checked + .cssbox-box { visibility: visible; opacity: 1; transform: translate(-50%, 0) perspective(70em) rotateY(0deg); transition-delay: .5s, .5s, .43s; transition-timing-function: linear, linear, cubic-bezier(0.250, 0.250, 0.935, 1.250); }
+.cssbox-select:checked + .cssbox-box, .cssbox-box:target { visibility: visible; opacity: 1; transform: translate(-50%, 0) perspective(70em) rotateY(0deg); transition-delay: .5s, .5s, .43s; transition-timing-function: linear, linear, cubic-bezier(0.250, 0.250, 0.935, 1.250); }
 	picture.cssbox-box img { visibility: visible; }

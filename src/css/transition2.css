@@ -1,5 +1,5 @@
 /* TRANSITION EFFECT */
 .cssbox-overlay { display: block; visibility: hidden; opacity: 0; transition: opacity .1s ease-in-out .7s, visibility 0s linear .8s; }
-.cssbox-select:not(.close):checked ~ .cssbox-overlay { visibility: visible; opacity: 1; transition-delay: 0s, 0s; }
+.cssbox-select:not(.close):checked ~ .cssbox-overlay, .cssbox-box:target ~ .cssbox-overlay { visibility: visible; opacity: 1; transition-delay: 0s, 0s; }
 .cssbox-box { display: block; visibility: hidden; margin-left: -100vw; transition: margin-left 1s cubic-bezier(1, -2, 1, -2) 0s, visibility 0s linear .8s; }
-.cssbox-select:checked + .cssbox-box { visibility: visible; margin-left: 50vw; transition-timing-function: cubic-bezier(0.640, 0.890, 0.745, 1.240), linear; transition-delay: 0s, 0s; }
+.cssbox-select:checked + .cssbox-box, .cssbox-box:target { visibility: visible; margin-left: 50vw; transition-timing-function: cubic-bezier(0.640, 0.890, 0.745, 1.240), linear; transition-delay: 0s, 0s; }

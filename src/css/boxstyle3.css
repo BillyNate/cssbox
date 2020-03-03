@@ -19,9 +19,9 @@
 @media (orientation:portrait)
 {
 	.cssbox-box { margin-top: 50vh; margin-left: 50vw; }
-	.cssbox-select:checked + .cssbox-box { margin-top: 50vh; margin-left: 5vw; }
+	.cssbox-select:checked + .cssbox-box, .cssbox-box:target { margin-top: 50vh; margin-left: 5vw; }
 		picture.cssbox-box img { width: 0; height: auto; }
-		.cssbox-select:checked + .cssbox-box img { width: calc(90vw - 10px); height: auto; }
+		.cssbox-select:checked + .cssbox-box img, .cssbox-box:target img { width: calc(90vw - 10px); height: auto; }
 }
 
 	.cssbox-content { padding: 0 20px; margin: 20px 0; }
