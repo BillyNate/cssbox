@@ -18,4 +18,4 @@ install:
     - npm install
 
 script:
-    - grunt deploy
+    - grunt deploy --force
