@@ -3,19 +3,19 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    jade: {
+    pug: {
       compile: {
           files: [{
               expand: true,
-              cwd: 'src/demo/jade/',
-              src: ['**/*.jade','!html-content.jade'],
+              cwd: 'src/demo/pug/',
+              src: ['**/*.pug','!html-content.pug'],
               dest: 'demo/',
               ext: '.html'
           },
           {
               expand: true,
-              cwd: 'src/generator/jade/',
-              src: ['**/*.jade'],
+              cwd: 'src/generator/pug/',
+              src: ['**/*.pug'],
               dest: 'generator/',
               ext: '.html'
           }]
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['src/demo/jade/*.jade','src/generator/jade/*.jade','src/css/*.css','src/demo/css/*.css','src/generator/css/*.css','src/js/*.js','src/demo/js/*.js','src/generator/js/*.js'],
+      files: ['src/demo/pug/*.pug','src/generator/pug/*.pug','src/css/*.css','src/demo/css/*.css','src/generator/css/*.css','src/js/*.js','src/demo/js/*.js','src/generator/js/*.js'],
       tasks: ['default']
     },
     'gh-pages': {
@@ -127,7 +127,7 @@ module.exports = function(grunt) {
     return ret;
   }
   
-  grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-contrib-pug');
 
   grunt.loadNpmTasks('grunt-autoprefixer');
 
@@ -139,7 +139,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-gh-pages');
 
-  grunt.registerTask('default', ['jade','autoprefixer','cssmin','uglify']);
+  grunt.registerTask('default', ['pug','autoprefixer','cssmin','uglify']);
 
   grunt.registerTask('deploy', ['gh-pages']);
 

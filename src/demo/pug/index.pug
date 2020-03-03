@@ -40,7 +40,7 @@ html(lang="en")
 		input.cssbox-select(type="radio", name="gallery01", value="#{i}", id="gallery01_#{i}", role="button", aria-controls="gallery01_#{i}_picture", aria-hidden="true")
 		div.cssbox-box(id="gallery01_#{i}_picture", role="presentation", aria-labelledby="gallery01_#{i}_label")
 			div.cssbox-content
-				include html-content.jade
+				include html-content.pug
 			label.nav.prev(for="gallery01_#{i-1}", role="navigation") previous
 			label.nav.next(for="gallery01_#{i+1}", role="navigation") next
 			label.close(for="gallery01_close", role="button") close
