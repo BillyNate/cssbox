@@ -43,22 +43,22 @@ html(lang="en")
 			h2 Pick your style
 			div.content
 				- for(i=1; i<=6; i++)
-					input(type="radio" name="boxstyle" value=i id="boxstyle_#{i}")
-					label.pick(class="boxstyle#{i}" for="boxstyle_#{i}")
-						img(src="http://billynate.github.io/cssbox/images/box#{i}.jpg", alt="")
+					input(type="radio" name="boxstyle" value=i id="boxstyle_" + i)
+					label.pick(class="boxstyle" + i for="boxstyle_" + i)
+						img(src="http://billynate.github.io/cssbox/images/box" + i + ".jpg", alt="")
 		section.transition
 			h2 Pick your transition
 			div.content
 				- for(i=1; i<=5; i++)
-					input(type="radio" name="transition" value=i id="transition_#{i}")
-					label.pick(class="transition#{i}" for="transition_#{i}")
+					input(type="radio" name="transition" value=i id="transition_" + i)
+					label.pick(class="transition" + i for="transition_" + i)
 						span.box
 		section.spinner
 			h2 Pick your loader
 			div.content
 				- for(i=1; i<=8; i++)
-					input(type="radio" name="spinner" value=i id="spinner_#{i}")
-					label.pick(class="loader-animation-#{i}" for="spinner_#{i}")
+					input(type="radio" name="spinner" value=i id="spinner_" + i)
+					label.pick(class="loader-animation-" + i for="spinner_" + i)
 						div.loading
 		section.code
 			h2 Get the codez
@@ -98,13 +98,13 @@ html(lang="en")
 			button.facebook(title="Share on Facebook")
 				i.fa.fa-facebook.fa-3x.fa-fw
 		- for(i=0; i<gallery.length; i++)
-			input.cssbox-select(type="radio" name="gallery" value=i id="gallery_#{i}" role="button" aria-controls="gallery_#{i}_picture" aria-hidden="true")
-			picture.cssbox-box.loading(style="background-image: url("+gallery[i].url+"?q=75)" id="gallery_#{i}_picture" role="presentation" aria-labelledby="gallery_#{i}_label")
+			input.cssbox-select(type="radio" name="gallery" value=i id="gallery_" + i role="button" aria-controls="gallery_" + i + "_picture" aria-hidden="true")
+			picture.cssbox-box.loading(style="background-image: url("+gallery[i].url+"?q=75)" id="gallery_" + i + "_picture" role="presentation" aria-labelledby="gallery_" + i + "_label")
 				label.close(for="gallery_close" role="button") close
 				img(src=gallery[i].url+"?fit=max&w=1000&h=200&q=75" alt="")
 				- if(i > 0)
-					label.nav.prev(for="gallery_#{i-1}" role="navigation") previous
-				label.nav.next(for="gallery_#{i+1}" role="navigation") next
+					label.nav.prev(for="gallery_" + (i-1) role="navigation") previous
+				label.nav.next(for="gallery_" + (i+1) role="navigation") next
 				p(role="note") The #{gallery[i].i} picture of the gallery
 		input.cssbox-select.close(type="radio" name="gallery" value="close" id="gallery_close" role="button" aria-hidden="true")
 		label.cssbox-overlay(for="gallery_close" role="presentation")
