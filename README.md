@@ -28,7 +28,7 @@ Optionally load the stylesheets of a premade boxstyle, a transition and/or a loa
 <link rel="stylesheet" href="dist/cssbox.css" />
 <link rel="stylesheet" href="dist/boxstyle6.css" />
 <link rel="stylesheet" href="dist/transition1.css" />
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/css-spinning-spinners/1.1.0/load2.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/BillyNate/css-spinning-spinners/dist/css/load2.css" />
 ```
 
 Put labels containing the thumbnails of your pictures anywhere in the page.

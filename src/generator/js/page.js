@@ -6,7 +6,7 @@ jQuery().ready(function()
 		headTags = '';
 		setConfig = function()
 		{
-			headTags = $('<link>').attr({ rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/cssbox/1.0.0/cssbox.css' }).prop('outerHTML');
+			headTags = $('<link>').attr({ rel: 'stylesheet', href: '//cdn.jsdelivr.net/gh/BillyNate/cssbox/dist/css/cssbox.css' }).prop('outerHTML');
 			
 			for(i=0; i<params.length; i++)
 			{
@@ -16,7 +16,7 @@ jQuery().ready(function()
 					if($('input[name="' + params[i] + '"]:checked').length > 0)
 					{
 						$('link.' + params[i]).attr({ 'href': '../dist/css/' + params[i] + $('input[name="' + params[i] + '"]').filter(':checked').val() + '.css' });
-						headTags += '\n' + $('<link>').attr({ rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/cssbox/1.0.0/' + params[i] + $('input[name="' + params[i] + '"]').filter(':checked').val() + '.css' }).prop('outerHTML');
+						headTags += '\n' + $('<link>').attr({ rel: 'stylesheet', href: '//cdn.jsdelivr.net/gh/BillyNate/cssbox/dist/css/' + params[i] + $('input[name="' + params[i] + '"]').filter(':checked').val() + '.css' }).prop('outerHTML');
 					}
 				}
 				else if(params[i] == 'spinner')
@@ -30,7 +30,7 @@ jQuery().ready(function()
 					{
 						$('body').addClass('loader-animation-' + $('input[name="' + params[i] + '"]').filter(':checked').val());
 						$('link.load' + $('input[name="' + params[i] + '"]').filter(':checked').val()).insertBefore($('link.load').first());
-						headTags += '\n' + $('<link>').attr({ rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/css-spinning-spinners/1.1.0/load' + $('input[name="spinner"]').filter(':checked').val() + '.css' }).prop('outerHTML');
+						headTags += '\n' + $('<link>').attr({ rel: 'stylesheet', href: '//cdn.jsdelivr.net/gh/BillyNate/css-spinning-spinners/dist/css/load' + $('input[name="spinner"]').filter(':checked').val() + '.css' }).prop('outerHTML');
 					}
 				}
 			}

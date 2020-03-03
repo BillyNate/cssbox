@@ -1,6 +1,5 @@
 - var config = { title: 'CSSBox', description: 'The pure css lightbox', author: 'BillyNate' }
 - var i = 0
-- var versions = { cssbox: '1.0.0', 'css-spinning-spinners': '1.1.0', 'github-fork-ribbon': '0.1.1', 'font-awesome': '4.3.0', normalize: '3.0.2' }
 - var gallery = [{'i':'first','url':'//ununsplash.imgix.net/photo-1418065460487-3e41a6c84dc5'}, {'i':'second','url':'//ununsplash.imgix.net/photo-1419064642531-e575728395f2'}, {'i':'third','url':'//ununsplash.imgix.net/photo-1417436026361-a033044d901f'}, {'i':'fourth','url':'//ununsplash.imgix.net/photo-1414502622871-b90b0bec7b1f'}, {'i':'fifth','url':'//ununsplash.imgix.net/photo-1416424500327-a57ace7358b8'}, {'i':'last','url':'//ununsplash.imgix.net/photo-1417021423914-070979c8eb34'}]
 doctype html
 html(lang="en")
@@ -12,23 +11,23 @@ html(lang="en")
 		meta(property="og:title" content=config.title)
 		meta(property="og:description" content=config.description)
 		meta(property="og:type" content="website")
-		link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/"+versions['normalize']+"/normalize.min.css")
+		link(rel="stylesheet" href="//cdn.jsdelivr.net/gh/necolas/normalize.css/normalize.min.css")
 		link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:700")
-		link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/"+versions['font-awesome']+"/css/font-awesome.min.css")
-		link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/"+versions['github-fork-ribbon']+"/gh-fork-ribbon.min.css")
+		link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+		link(rel="stylesheet" href="//cdn.jsdelivr.net/gh/simonwhitaker/github-fork-ribbon-css/gh-fork-ribbon.min.css")
 		link(rel="stylesheet" href="../dist/css/cssbox.css")
 		link.boxstyle(rel="stylesheet")
 		link.transition(rel="stylesheet")
-		link.load.load1(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/css-spinning-spinners/"+versions['css-spinning-spinners']+"/load1.css")
-		link.load.load2(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/css-spinning-spinners/"+versions['css-spinning-spinners']+"/load2.css")
-		link.load.load3(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/css-spinning-spinners/"+versions['css-spinning-spinners']+"/load3.css")
-		link.load.load4(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/css-spinning-spinners/"+versions['css-spinning-spinners']+"/load4.css")
-		link.load.load5(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/css-spinning-spinners/"+versions['css-spinning-spinners']+"/load5.css")
-		link.load.load6(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/css-spinning-spinners/"+versions['css-spinning-spinners']+"/load6.css")
-		link.load.load7(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/css-spinning-spinners/"+versions['css-spinning-spinners']+"/load7.css")
-		link.load.load8(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/css-spinning-spinners/"+versions['css-spinning-spinners']+"/load8.css")
+		link.load.load1(rel="stylesheet" href="//cdn.jsdelivr.net/gh/BillyNate/css-spinning-spinners/dist/css/load1.css")
+		link.load.load2(rel="stylesheet" href="//cdn.jsdelivr.net/gh/BillyNate/css-spinning-spinners/dist/css/load2.css")
+		link.load.load3(rel="stylesheet" href="//cdn.jsdelivr.net/gh/BillyNate/css-spinning-spinners/dist/css/load3.css")
+		link.load.load4(rel="stylesheet" href="//cdn.jsdelivr.net/gh/BillyNate/css-spinning-spinners/dist/css/load4.css")
+		link.load.load5(rel="stylesheet" href="//cdn.jsdelivr.net/gh/BillyNate/css-spinning-spinners/dist/css/load5.css")
+		link.load.load6(rel="stylesheet" href="//cdn.jsdelivr.net/gh/BillyNate/css-spinning-spinners/dist/css/load6.css")
+		link.load.load7(rel="stylesheet" href="//cdn.jsdelivr.net/gh/BillyNate/css-spinning-spinners/dist/css/load7.css")
+		link.load.load8(rel="stylesheet" href="//cdn.jsdelivr.net/gh/BillyNate/css-spinning-spinners/dist/css/load8.css")
 		link(rel="stylesheet" href="css/page.css")
-		script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+		script(src="//cdn.jsdelivr.net/npm/jquery@1.11.2/dist/jquery.min.js")
 		script(src="//platform.twitter.com/widgets.js")
 		script(src="js/page.js")
 	body
@@ -65,7 +64,7 @@ html(lang="en")
 			div.content
 				p #{'<head>'}
 				textarea.head(readonly).
-					#{'<link href="//cdnjs.cloudflare.com/ajax/libs/cssbox/1.0.0/cssbox.css" rel="stylesheet">'}
+					#{'<link href="//cdn.jsdelivr.net/gh/BillyNate/cssbox/dist/css/cssbox.css" rel="stylesheet">'}
 				p.
 					#{'</head>'} <br />
 					#{'<body>'}
